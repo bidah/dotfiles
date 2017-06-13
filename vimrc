@@ -92,7 +92,7 @@ map <leader>a :Ag!<space>|                            " Shortcut for Silver Sear
 nnoremap Z ZZ|                                        " Exits saving file
 nnoremap Q ZQ|                                        " Exits without saving file
 map <leader>m :!open -a "Marked 2" %<cr><cr>|         " Open markdown preview in Marked app
-map <leader>z <C-z>|                                  " Go to shell
+map <leader>z <C-z>|                                  " Go to shell (suspend)
 nnoremap <leader><leader> <c-^>|                      " Remap to switch between last opened file
 nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
 map <C-n> :NERDTreeToggle<CR>|                        " Open Nerdtree
@@ -137,7 +137,7 @@ cnoremap <C-e> <End>
 " Repeat last macro if in a normal buffer by hiting enter.
 nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
-"shift-D and shift-C apply to the end of the line. so shift-Y was missing
+"shift-D or shift-C applys to the end of the line. so shift-Y was missing
 noremap Y y$
 
 " my custom pageups and pagedowns
@@ -161,6 +161,13 @@ vmap ˚ :m '<-2<CR>gv=gv
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 " command W w !sudo tee % > /dev/null
+
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+" https://github.com/r00k/dotfiles/blob/master/vimrc#L138-L142
+map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
+map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 "----------Auto-Commands----------"
 
