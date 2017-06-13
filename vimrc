@@ -169,6 +169,11 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
+" Note that remapping C-s requires flow control to be disabled
+" (e.g. in .bashrc or .zshrc)
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+
 "----------Auto-Commands----------"
 
 "Automatically source the .vimrc file on save
@@ -308,4 +313,16 @@ endif
 " let g:bufExplorerDisableDefaultKeyMapping=1
 " let g:bufExplorerShowRelativePath=1
 " let g:bufExplorerShowDirectories = 0
+
+" rename current file https://github.com/r00k/dotfiles/blob/master/vimrc#L313
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <Leader>n :call RenameFile()<cr>
 

@@ -5,6 +5,10 @@ export ZSH=/Users/rodrigofigueroa1/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="philips"
 
+# disable flow control for C-s usage in vim
+# https://stackoverflow.com/questions/23200753/disable-flow-control-in-bashrc-for-vim-mapping
+stty -ixon -ixoff
+
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
