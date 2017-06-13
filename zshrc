@@ -148,11 +148,7 @@ alias curl_cors_test='curl -I -s -X GET -H "Origin: http://www.liveon.cl" http:/
 # Dev aliases
 
 alias dev_webpack_symlink='ln -sf $HOME/workspace/cc-phalcon/webpacks/dist/js/webpack_core.bundle.js packages/webpacks/dist/js/webpack_core.bundle.js'
-
 alias apache_global='sudo vim /private/etc/apache2/httpd.conf'
-
-# go to
-alias ingerop='/Users/rodrigofigueroa1/dropbox/code/apps/ingerop'
 
 #fast copy
 alias pwdc='pwd | pbcopy'
@@ -161,24 +157,12 @@ alias pwdc='pwd | pbcopy'
 export NVM_DIR="/Users/rodrigofigueroa1/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Git
-# alias gst='git status'
-# alias gl='git pull'
-# alias gp='git push'
-# alias gd='git diff | mate'
-# alias gc='git commit -v'
-# alias gca='git commit -v -a'
-# alias gcm='git commit -m'
-# alias gb='git branch'
-# alias gba='git branch -a'
-# alias gcam='git commit -am'
-# alias gbb='git branch -b'
-# alias gco='git checkout'
-# alias gcob='git checkout -b'
+alias amend="git commit --amend"
+alias -g G='| grep'
+alias -g L='| less'
+alias m='git checkout master'
 
 alias be='bundle exec'
-
-#alias nuevos docker era
 alias dv='./dev'
 alias dev='./dev'
 alias cli='./cli'

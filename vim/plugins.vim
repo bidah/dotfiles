@@ -46,6 +46,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-repeat'
 
 Plugin 'vim-scripts/LustyJuggler'
+Plugin 'moll/vim-node'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
