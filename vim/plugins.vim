@@ -48,6 +48,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'vim-scripts/LustyJuggler'
 Plugin 'moll/vim-node'
 
+Plugin 'christoomey/vim-tmux-navigator'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

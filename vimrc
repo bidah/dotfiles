@@ -98,10 +98,10 @@ nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
 map <C-n> :NERDTreeToggle<CR>|                        " Open Nerdtree
 
 " Move faster between windows. Instead of Ctrl-w + hjkl, just use Ctrl + hjkl
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
 
 " Open several files from the same directory. ref: http://vimcasts.org/episodes/the-edit-command/
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -175,6 +175,12 @@ map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
 "----------Auto-Commands----------"
+
+autocmd User Node
+  \ if &filetype == "javascript" |
+  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+  \ endif
 
 "Automatically source the .vimrc file on save
 augroup autosourcing
@@ -325,4 +331,5 @@ function! RenameFile()
   endif
 endfunction
 map <Leader>n :call RenameFile()<cr>
+
 
