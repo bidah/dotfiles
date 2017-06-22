@@ -5,6 +5,9 @@ syntax on                                             " Show syntax highlighting
 filetype on                                           " Enable filetype detection
 filetype plugin on                                    " Enable filetype-specific plugins
 filetype indent on                                    " Enable filetype-specific indenting
+
+runtime macros/matchit.vim
+
 set autoindent                                        " Set auto indent
 set copyindent                                        " copy the previous indentation on autoindenting (look for in google)
 set ts=2                                              " Set indent to 2 spaces
@@ -79,6 +82,12 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 " show line#:column# on the right hand side
 set statusline+=%=%l:%c
+
+"indent guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
+
 
 
 "----------Mappings----------"
@@ -331,5 +340,4 @@ function! RenameFile()
   endif
 endfunction
 map <Leader>n :call RenameFile()<cr>
-
 

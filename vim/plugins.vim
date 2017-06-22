@@ -10,7 +10,7 @@ Plugin 'vim-ruby/vim-ruby'
 " Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-endwise'                      "End certain structures in ruby
+"Plugin 'tpope/vim-endwise'                      "End certain structures in ruby
 Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -37,7 +37,6 @@ Plugin 'vim-scripts/tlib'
 
 " getting used to (in progress muscle memory)
 Plugin 'tpope/vim-obsession'
-Plugin 'edsono/vim-matchit'
 Plugin 'godlygeek/tabular'
 Plugin 'tommcdo/vim-lion'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -49,6 +48,7 @@ Plugin 'vim-scripts/LustyJuggler'
 Plugin 'moll/vim-node'
 
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
