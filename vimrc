@@ -83,10 +83,10 @@ set statusline+=%*
 " show line#:column# on the right hand side
 set statusline+=%=%l:%c
 
-"indent guides
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
+"indent guides 
+let g:indent_guides_auto_colors = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
 
 
 
@@ -240,7 +240,7 @@ augroup END
 set t_Co=256   " This is may or may not needed.
 set background=light
 "colorscheme PaperColor
-colorscheme moonfly
+colorscheme dracula
 
 " https://github.com/r00k/dotfiles/blob/master/vimrc
 "map <Leader>bb :!bundle install<cr>

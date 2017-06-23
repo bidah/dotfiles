@@ -51,9 +51,17 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'easymotion/vim-easymotion'
 
+" themes
 Plugin 'bluz71/vim-moonfly-colors'
 "Plugin 'reewr/vim-monokai-phoenix'
 Plugin 'dracula/vim'
+
+" text objects
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-line' " al, il 
+
+
+Plugin 'kana/vim-niceblock' 
 
 
 " All of your Plugins must be added before the following line
