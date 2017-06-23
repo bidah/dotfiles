@@ -8,7 +8,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'mileszs/ack.vim'
-" Plugin 'rking/ag.vim'
+"Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 "Plugin 'tpope/vim-endwise'                      "End certain structures in ruby
 Plugin 'tpope/vim-commentary'
@@ -23,7 +23,6 @@ Plugin 'etaoins/vim-volt-syntax'
 
 Plugin 'posva/vim-vue'
 Plugin 'sekel/vim-vue-syntastic'
-Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'tpope/vim-bundler'
 Plugin 'jiangmiao/auto-pairs'
 " Plugin 'Valloric/YouCompleteMe'
@@ -62,6 +61,7 @@ Plugin 'kana/vim-textobj-line' " al, il
 
 
 Plugin 'kana/vim-niceblock' 
+Plugin 'Shougo/denite.nvim'
 
 
 " All of your Plugins must be added before the following line
