@@ -63,6 +63,9 @@ Plugin 'kana/vim-textobj-line' " al, il
 Plugin 'kana/vim-niceblock' 
 Plugin 'Shougo/denite.nvim'
 
+Plugin 'kana/vim-operator-user'
+Plugin 'haya14busa/vim-operator-flashy'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

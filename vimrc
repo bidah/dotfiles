@@ -22,7 +22,6 @@ set ruler                                             " Show cursor position all
 set showcmd
 set relativenumber                                    " Show line number relative to current line
 set number                                            " Show line number
-" set numberwidth=5
 set clipboard=unnamed                                 " Use the system clipboard
 set hidden                                            " preserve undo buffers http://usevim.com/2012/10/19/vim101-set-hidden/
 
@@ -50,7 +49,7 @@ set splitbelow                                        " Open new split panes to 
 set noerrorbells visualbell t_vb=                     " No bells!
 
 " http://nvie.com/posts/how-i-boosted-my-vim/
-nmap <silent> ,/ :nohlsearch<CR>                      
+" nmap <silent> ,/ :nohlsearch<CR>                      
 
 " swap files - set them to a new tmp file to remove clutter from app
 set noswapfile
@@ -89,8 +88,7 @@ let g:indent_guides_auto_colors = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
 
 
-
-"----------Mappings----------"
+" Mappings {{{
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
 
 nmap <leader>vi :tabedit $MYVIMRC<cr>|                " Shortcut to edit .vimrc
@@ -182,6 +180,12 @@ map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 " (e.g. in .bashrc or .zshrc)
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
+
+" You can confirm that text is yanked correctly and see yanked text by highlighting
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
+
+"}}}
 
 "----------Auto-Commands----------"
 
@@ -343,3 +347,6 @@ endfunction
 
 map <Leader>n :call RenameFile()<cr>
 map <Leader>j <Plug>(easymotion-prefix)
+
+autocmd VimEnter,Colorscheme * :hi Flashy guibg=#197bb7 ctermbg=252
+let g:operator#flashy#flash_time = 240
