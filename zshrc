@@ -3,7 +3,7 @@ export ZSH=/Users/rodrigofigueroa1/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="philips"
+ZSH_THEME="dracula"
 
 # disable flow control for C-s usage in vim
 # https://stackoverflow.com/questions/23200753/disable-flow-control-in-bashrc-for-vim-mapping

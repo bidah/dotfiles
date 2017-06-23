@@ -7,8 +7,8 @@ Plugin 'wincent/terminus'
 Plugin 'tpope/vim-rails'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-ruby/vim-ruby'
-" Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
+" Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 "Plugin 'tpope/vim-endwise'                      "End certain structures in ruby
 Plugin 'tpope/vim-commentary'
@@ -27,7 +27,6 @@ Plugin 'neilagabriel/vim-geeknote'
 " Plugin 'tpope/vim-bundler'
 Plugin 'jiangmiao/auto-pairs'
 " Plugin 'Valloric/YouCompleteMe'
-" Plugin 'vim-scripts/vim-auto-save'
 " Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'jlanzarotta/bufexplorer'
 
@@ -49,6 +48,13 @@ Plugin 'moll/vim-node'
 
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'easymotion/vim-easymotion'
+
+Plugin 'bluz71/vim-moonfly-colors'
+"Plugin 'reewr/vim-monokai-phoenix'
+Plugin 'dracula/vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -239,7 +239,8 @@ augroup END
 " Paper color theme options
 set t_Co=256   " This is may or may not needed.
 set background=light
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme moonfly
 
 " https://github.com/r00k/dotfiles/blob/master/vimrc
 "map <Leader>bb :!bundle install<cr>
@@ -339,5 +340,6 @@ function! RenameFile()
     redraw!
   endif
 endfunction
-map <Leader>n :call RenameFile()<cr>
 
+map <Leader>n :call RenameFile()<cr>
+map <Leader>j <Plug>(easymotion-prefix)
