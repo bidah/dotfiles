@@ -5,7 +5,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' "Let Vundle manage Vundle, required
 Plugin 'wincent/terminus'
 Plugin 'tpope/vim-rails'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'mileszs/ack.vim'
 "Plugin 'rking/ag.vim'
@@ -44,27 +43,28 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'vim-scripts/LustyJuggler'
 Plugin 'moll/vim-node'
-
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nathanaelkane/vim-indent-guides'
 
-Plugin 'easymotion/vim-easymotion'
-
 " themes
 Plugin 'bluz71/vim-moonfly-colors'
-"Plugin 'reewr/vim-monokai-phoenix'
 Plugin 'dracula/vim'
 
 " text objects
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line' " al, il 
 
-
 Plugin 'kana/vim-niceblock' 
+
+" Search
 Plugin 'Shougo/denite.nvim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
 
 Plugin 'kana/vim-operator-user'
 Plugin 'haya14busa/vim-operator-flashy'
+
+Plugin 'vim-scripts/YankRing.vim'
 
 
 " All of your Plugins must be added before the following line

@@ -119,6 +119,11 @@ export PATH=$HOME/workspace/phantomjs/lib/bin:$PATH
 
 # Deploy SSH aliases
 
+alias vimrc="vim ~/.vimrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshrc_source='source ~/.zshrc'
+alias zshrc='vim ~/.zshrc'
+
 alias aws_crazycake='ssh -v -i $HOME/.ssh/CrazyCakeApps.pem ubuntu@54.85.185.121'
 alias aws_liveon='ssh -v -i $HOME/.ssh/LiveOnApp.pem ubuntu@52.0.94.224'
 alias aws_cineplanet='ssh -v -i $HOME/.ssh/CineplanetApp.pem ubuntu@54.152.250.221'
@@ -136,8 +141,6 @@ alias redis_conf='sudo vim /usr/local/etc/redis.conf'
 alias redis_start='redis-server &'
 alias mysql_start='mysqld'
 alias perms='stat -f %Mp%Lp $1'
-alias bash_edit='vim ~/.zshrc'
-alias bash_source='source ~/.zshrc'
 alias bap='bash app.bash'
 alias sync_time='ntpdate us.pool.ntp.org'
 alias cellar='cd /usr/local/Cellar/'
