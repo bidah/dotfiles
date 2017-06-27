@@ -5,6 +5,7 @@ syntax on                                             " Show syntax highlighting
 filetype on                                           " Enable filetype detection
 filetype plugin on                                    " Enable filetype-specific plugins
 filetype indent on                                    " Enable filetype-specific indenting
+set backspace=start                                   " Allow backspacing over the start of insert
 
 runtime macros/matchit.vim
 
