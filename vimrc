@@ -5,7 +5,7 @@ syntax on                                             " Show syntax highlighting
 filetype on                                           " Enable filetype detection
 filetype plugin on                                    " Enable filetype-specific plugins
 filetype indent on                                    " Enable filetype-specific indenting
-set backspace=start                                   " Allow backspacing over the start of insert
+set backspace=start,eol                               " Allow backspacing over the start of insert
 
 runtime macros/matchit.vim
 
@@ -88,14 +88,14 @@ let g:indent_guides_auto_colors = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
 
-
+set suffixesadd+=.scss
 " Mappings {{{
+
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
-
+nnoremap <silent> = V`]=|                             "Auto indent pasted code in vim
 nmap <leader>vi :tabedit $MYVIMRC<cr>|                " Shortcut to edit .vimrc
-nmap <leader>cu :e frontend/dev/js/src/ui.js<cr>
-nmap <leader>sn :e ~/.vim/snippets/
-
+nmap <leader>cu :e frontend/dev/js/src/ui.js<cr>|     " Shortcut 
+nmap <leader>sn :e ~/.vim/snippets/|                  "Open snippets path. Fill in which one to access
 map <leader>a :Ag!<space>|                            " Shortcut for Silver Search
 nnoremap Z ZZ|                                        " Exits saving file
 nnoremap Q ZQ|                                        " Exits without saving file
@@ -103,20 +103,13 @@ map <leader>m :!open -a "Marked 2" %<cr><cr>|         " Open markdown preview in
 map <leader>z <C-z>|                                  " Go to shell (suspend)
 nnoremap <leader><leader> <c-^>|                      " Remap to switch between last opened file
 nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
-map <C-n> :NERDTreeToggle<CR>|                        " Open Nerdtree
+map <leader>t :NERDTreeToggle<CR>|                        " Open Nerdtree
 
 " Move faster between windows. Instead of Ctrl-w + hjkl, just use Ctrl + hjkl
 "map <C-h> <C-w>h
 "map <C-j> <C-w>j
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
-
-" Open several files from the same directory. ref: http://vimcasts.org/episodes/the-edit-command/
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
 
 " `vv` to highlight just the text (i.e. no indents) in a line
 map vv ^vg_
@@ -145,7 +138,7 @@ cnoremap <C-e> <End>
 " Repeat last macro if in a normal buffer by hiting enter.
 nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
-"shift-D or shift-C applys to the end of the line. so shift-Y was missing
+"Yank to end of line. (shift-D or shift-C applys to the end of the line. so shift-Y was missing)
 noremap Y y$
 
 " my custom pageups and pagedowns
@@ -158,7 +151,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " turn off search highlighting. NOTE: choca con vim vinegar
 nnoremap - :noh<cr>
 
-" http://vim.wikia.com/wiki/Moving_lines_up_or_down
+" move line up or down http://vim.wikia.com/wiki/Moving_lines_up_or_down
 nmap ∆ :m .+1<CR>==
 nmap ˚ :m .-2<CR>==
 imap ∆ <Esc>:m .+1<CR>==gi
@@ -177,6 +170,14 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
+" Open several files from the same directory. ref: http://vimcasts.org/episodes/the-edit-command/
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
+
+" Save in normal or insert mode with <C-s>
 " Note that remapping C-s requires flow control to be disabled
 " (e.g. in .bashrc or .zshrc)
 map <C-s> <esc>:w<CR>
@@ -347,6 +348,7 @@ function! RenameFile()
 endfunction
 
 map <Leader>n :call RenameFile()<cr>
+
 map <Leader>j <Plug>(easymotion-prefix)
 
 autocmd VimEnter,Colorscheme * :hi Flashy guibg=#197bb7 ctermbg=252

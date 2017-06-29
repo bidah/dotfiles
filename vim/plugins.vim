@@ -7,9 +7,9 @@ Plugin 'wincent/terminus'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'mileszs/ack.vim'
-"Plugin 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-endwise'                      "End certain structures in ruby
+"Plugin 'tpope/vim-endwise' "End certain structures in ruby
 Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -65,6 +65,7 @@ Plugin 'kana/vim-operator-user'
 Plugin 'haya14busa/vim-operator-flashy'
 
 Plugin 'vim-scripts/YankRing.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 
 " All of your Plugins must be added before the following line
