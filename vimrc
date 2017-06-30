@@ -9,6 +9,7 @@ set backspace=start,eol                               " Allow backspacing over t
 
 runtime macros/matchit.vim
 
+"set window                                            " Set window title by default
 set autoindent                                        " Set auto indent
 set copyindent                                        " copy the previous indentation on autoindenting (look for in google)
 set ts=2                                              " Set indent to 2 spaces
@@ -103,7 +104,9 @@ map <leader>m :!open -a "Marked 2" %<cr><cr>|         " Open markdown preview in
 map <leader>z <C-z>|                                  " Go to shell (suspend)
 nnoremap <leader><leader> <c-^>|                      " Remap to switch between last opened file
 nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
-map <leader>t :NERDTreeToggle<CR>|                        " Open Nerdtree
+map <leader>t :NERDTreeToggle<CR>|                    " Open Nerdtree
+nnoremap <leader>c :ccl<CR>|                          " cl[ose] quickfix window
+nnoremap <leader>o :cope<CR>|                         " [ope]n quickfix window
 
 " Move faster between windows. Instead of Ctrl-w + hjkl, just use Ctrl + hjkl
 "map <C-h> <C-w>h

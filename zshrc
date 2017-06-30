@@ -184,3 +184,8 @@ nvm use 6.0
 
 
 eval "$(rbenv init -)"
+
+# capitan logic
+fpath=($HOME/.zsh/completion $fpath)
+autoload -U compinit
+compinit
