@@ -75,16 +75,6 @@ set laststatus=2                                       "see the current filename
 " Create tags file
 command! MakeTags !ctags -R .
 
-"http://bit.ly/2eOP2wL
-" [buffer number] followed by filename:
-set statusline=[%n]\ %t
-" for Syntastic messages:
-set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-" show line#:column# on the right hand side
-set statusline+=%=%l:%c
-
 "indent guides 
 let g:indent_guides_auto_colors = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
@@ -284,10 +274,20 @@ set foldlevel=1         "this is just what i use
 " fugitive Gstatus command
 " nnoremap S :Gstatus<cr>
 
-" recomended settings for syntastic
+"http://bit.ly/2eOP2wL
+" [buffer number] followed by filename:
+set statusline=[%n]\ %t
+" for Syntastic messages:
 set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+" show line#:column# on the right hand side
+set statusline+=%=%l:%c
+
+" recomended settings for syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 " syntastic config
 let g:syntastic_always_populate_loc_list = 1
@@ -296,6 +296,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_vue_checkers = ['eslint']
 
 "vim-vue-syntastic configuration to make it work with local project eslint
 " let g:syntastic_vue_checkers = ['eslint']
@@ -307,7 +308,7 @@ if matchstr(local_eslint, "^\/\\w") == ''
 endif
 if executable(local_eslint)
     let g:syntastic_javascript_eslint_exec = local_eslint
-    " let g:syntastic_vue_eslint_exec = local_eslint
+    let g:syntastic_vue_eslint_exec = local_eslint
 endif
 
 " use ag in ack.vim
