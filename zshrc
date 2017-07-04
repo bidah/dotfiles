@@ -9,6 +9,10 @@ ZSH_THEME="dracula"
 # https://stackoverflow.com/questions/23200753/disable-flow-control-in-bashrc-for-vim-mapping
 stty -ixon -ixoff
 
+# fixes double spaces in front of prompt in tmux
+export LC_ALL=en_US.UTF-8 
+export LANG=en_US.UTF-8
+
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 

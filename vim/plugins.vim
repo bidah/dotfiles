@@ -18,7 +18,7 @@ Plugin 'hwartig/vim-seeing-is-believing'
 Plugin 'scrooloose/syntastic'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'tpope/vim-vinegar'
-Plugin 'etaoins/vim-volt-syntax'
+"Plugin 'etaoins/vim-volt-syntax'
 
 Plugin 'posva/vim-vue'
 Plugin 'sekel/vim-vue-syntastic'
@@ -44,7 +44,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'vim-scripts/LustyJuggler'
 Plugin 'moll/vim-node'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 
 " themes
 Plugin 'bluz71/vim-moonfly-colors'

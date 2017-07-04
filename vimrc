@@ -29,6 +29,7 @@ set hidden                                            " preserve undo buffers ht
 
 set history=1000         " remember more commands and search history "http://nvie.com/posts/how-i-boosted-my-vim/
 set undolevels=1000      " use many muchos levels of undo
+set list lcs=tab:\|\ 
 
 " search down into subfolders
 " Provides tab-completion for all file-related tasks
@@ -93,10 +94,10 @@ set suffixesadd+=.scss
 " Mappings {{{
 
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
-nnoremap <silent> = V`]=|                             "Auto indent pasted code in vim
+nnoremap <silent> = V`]=|                             " Auto indent pasted code in vim
 nmap <leader>vi :tabedit $MYVIMRC<cr>|                " Shortcut to edit .vimrc
 nmap <leader>cu :e frontend/dev/js/src/ui.js<cr>|     " Shortcut 
-nmap <leader>sn :e ~/.vim/snippets/|                  "Open snippets path. Fill in which one to access
+nmap <leader>sn :e ~/.vim/snippets/|                  " Open snippets path. Fill in which one to access
 map <leader>a :Ag!<space>|                            " Shortcut for Silver Search
 nnoremap Z ZZ|                                        " Exits saving file
 nnoremap Q ZQ|                                        " Exits without saving file
@@ -212,10 +213,10 @@ augroup volt-syntax
   au BufReadPost *.volt set syntax=html
 augroup END
 
-augroup vue-syntax
-  autocmd!
-  au BufReadPost *.vue set syntax=html
-augroup END
+"augroup vue-syntax
+"  autocmd!
+"  au BufReadPost *.vue set syntax=html
+"augroup END
 
 " autocmd Filetype scss setlocal ts=4 sts=4 sw=4
  "expandtab is missing and it replaces tabs with spaces
