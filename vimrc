@@ -193,6 +193,10 @@ nmap Y <Plug>(operator-flashy)$
 
 "----------Auto-Commands----------"
 
+" Resize splits when the window is resized {{{
+autocmd VimResized * :wincmd =
+"}}}
+
 autocmd User Node
   \ if &filetype == "javascript" |
   \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
