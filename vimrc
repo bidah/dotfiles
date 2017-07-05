@@ -86,6 +86,8 @@ let g:clever_f_smart_case = 1
 let g:clever_f_across_no_line = 1
 
 set suffixesadd+=.scss
+
+
 " Mappings {{{
 
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
@@ -364,3 +366,7 @@ map <Leader>j <Plug>(easymotion-prefix)
 
 autocmd VimEnter,Colorscheme * :hi Flashy guibg=#197bb7 ctermbg=252
 let g:operator#flashy#flash_time = 240
+
+" Breakline with Enter {{{
+nnoremap <CR> o<Esc>
+"}}}
