@@ -58,6 +58,7 @@ Plugin 'kana/vim-textobj-line' " al, il
 Plugin 'kana/vim-niceblock' 
 
 " Search
+Plugin 'osyo-manga/vim-over' "substitue preview
 Plugin 'Shougo/denite.nvim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
@@ -70,6 +71,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'henrik/vim-indexed-search'
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rhysd/clever-f.vim'
+
 
 
 " All of your Plugins must be added before the following line

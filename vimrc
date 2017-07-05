@@ -80,6 +80,10 @@ let g:indent_guides_auto_colors = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
 
+"clever-f
+let g:clever_f_smart_case = 1
+let g:clever_f_across_no_line = 1
+
 set suffixesadd+=.scss
 " Mappings {{{
 
