@@ -98,6 +98,7 @@ nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
 map <leader>t :NERDTreeToggle<CR>|                    " Open Nerdtree
 nnoremap <leader>c :ccl<CR>|                          " cl[ose] quickfix window
 nnoremap <leader>o :cope<CR>|                         " [ope]n quickfix window
+imap <leader>y <C-y>,|                                " Emmet shortcut
 
 " Move faster between windows. Instead of Ctrl-w + hjkl, just use Ctrl + hjkl
 "map <C-h> <C-w>h

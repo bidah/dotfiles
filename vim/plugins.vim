@@ -69,6 +69,8 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'henrik/vim-indexed-search'
 
+Plugin 'Valloric/YouCompleteMe'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
