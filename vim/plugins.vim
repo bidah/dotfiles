@@ -67,6 +67,7 @@ Plugin 'haya14busa/vim-operator-flashy'
 
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'henrik/vim-indexed-search'
 
 
 " All of your Plugins must be added before the following line
