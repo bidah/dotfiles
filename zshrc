@@ -123,6 +123,7 @@ export PATH=$HOME/workspace/phantomjs/lib/bin:$PATH
 
 # Deploy SSH aliases
 
+alias vi="vim"
 alias vimrc="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshrc_source='source ~/.zshrc'
