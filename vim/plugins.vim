@@ -73,7 +73,7 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/clever-f.vim'
 
-
+Plugin 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
