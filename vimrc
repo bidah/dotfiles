@@ -10,6 +10,7 @@ set backspace=start,eol                               " Allow backspacing over t
 runtime macros/matchit.vim
 
 "set window                                            " Set window title by default
+set modifiable                                        " Make buffer modifiable
 set autoindent                                        " Set auto indent
 set copyindent                                        " copy the previous indentation on autoindenting (look for in google)
 set ts=2                                              " Set indent to 2 spaces
@@ -372,5 +373,5 @@ autocmd VimEnter,Colorscheme * :hi Flashy guibg=#197bb7 ctermbg=252
 let g:operator#flashy#flash_time = 240
 
 " Breakline with Enter {{{
-nnoremap <CR> o<Esc>
+"nnoremap <CR> o<Esc>
 "}}}
