@@ -92,6 +92,7 @@ set suffixesadd+=.scss
 " Mappings {{{
 
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
+vnoremap // y/<C-R>"<CR>
 nnoremap <silent> = V`]=|                             " Auto indent pasted code in vim
 nmap <leader>vi :tabedit $MYVIMRC<cr>|                " Shortcut to edit .vimrc
 nmap <leader>cu :e frontend/dev/js/src/ui.js<cr>|     " Shortcut 
@@ -220,6 +221,12 @@ augroup END
 "  autocmd!
 "  au BufReadPost *.vue set syntax=html
 "augroup END
+"
+augroup hbs-syntax
+  autocmd!
+  au BufReadPost *.hbs set syntax=html
+augroup END
+
 
 " autocmd Filetype scss setlocal ts=4 sts=4 sw=4
  "expandtab is missing and it replaces tabs with spaces
@@ -254,6 +261,10 @@ set t_Co=256   " This is may or may not needed.
 set background=light
 "colorscheme PaperColor
 colorscheme dracula
+
+let g:lightline = {
+      \ 'colorscheme': 'Dracula',
+      \ }
 
 " https://github.com/r00k/dotfiles/blob/master/vimrc
 "map <Leader>bb :!bundle install<cr>
