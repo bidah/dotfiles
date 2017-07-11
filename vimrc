@@ -265,6 +265,7 @@ colorscheme dracula
 let g:lightline = {
       \ 'colorscheme': 'Dracula',
       \ }
+set noshowmode "hide --INSERT-- because lightline handles it
 
 " https://github.com/r00k/dotfiles/blob/master/vimrc
 "map <Leader>bb :!bundle install<cr>
