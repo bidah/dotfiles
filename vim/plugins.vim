@@ -35,6 +35,7 @@ Plugin 'vim-scripts/tlib'
 " getting used to (in progress muscle memory)
 Plugin 'tpope/vim-obsession'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'tommcdo/vim-lion'
 Plugin 'AndrewRadev/splitjoin.vim'
 

@@ -7,8 +7,13 @@ filetype plugin on                                    " Enable filetype-specific
 filetype indent on                                    " Enable filetype-specific indenting
 set backspace=start,eol                               " Allow backspacing over the start of insert
 
+let mapleader = "\<Space>"                                   " Set leader key to space
+
 runtime macros/matchit.vim
 
+" markdown
+let g:vim_markdown_conceal = 0
+ 
 "set window                                            " Set window title by default
 set modifiable                                        " Make buffer modifiable
 set autoindent                                        " Set auto indent
@@ -19,7 +24,6 @@ set expandtab                                         " Use spaces, not tab char
 set cursorline                                        " Hightlight current line
 set autowriteall                                      " Automatically save file when switching buffers
 set t_CO=256                                          " Use 256 colors (useful for terminal vim)
-let mapleader = " "                                   " Set leader key to space
 set title                                             " change the terminal's title
 set ruler                                             " Show cursor position all the time
 set showcmd
@@ -93,6 +97,7 @@ set suffixesadd+=.scss
 
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
 vnoremap // y/<C-R>"<CR>
+vnoremap /' y:Ag! <C-R>"<CR>
 nnoremap <silent> = V`]=|                             " Auto indent pasted code in vim
 nmap <leader>vi :tabedit $MYVIMRC<cr>|                " Shortcut to edit .vimrc
 nmap <leader>cu :e frontend/dev/js/src/ui.js<cr>|     " Shortcut 
@@ -107,7 +112,7 @@ nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
 map <leader>t :NERDTreeToggle<CR>|                    " Open Nerdtree
 nnoremap <leader>c :ccl<CR>|                          " cl[ose] quickfix window
 nnoremap <leader>o :cope<CR>|                         " [ope]n quickfix window
-imap <leader>y <C-y>,|                                " Emmet shortcut
+"imap <C-y> <C-y>,|                                    " Emmet shortcut
 
 " Move faster between windows. Instead of Ctrl-w + hjkl, just use Ctrl + hjkl
 "map <C-h> <C-w>h
