@@ -196,6 +196,16 @@ imap <C-s> <esc>:w<CR>
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
+nnoremap j gj
+vnoremap j gj
+nnoremap gj j
+vnoremap gj j
+
+nnoremap k gk
+vnoremap k gk
+nnoremap gk k
+vnoremap gk k
+
 "}}}
 
 "----------Auto-Commands----------"
