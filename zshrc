@@ -36,7 +36,7 @@ export LANG=en_US.UTF-8
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textvim ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker)
+plugins=(git docker z)
 
 # https://robots.thoughtbot.com/cding-to-frequently-used-directories-in-zsh
 setopt auto_cd

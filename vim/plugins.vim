@@ -24,7 +24,6 @@ Plugin 'posva/vim-vue'
 Plugin 'sekel/vim-vue-syntastic'
 " Plugin 'tpope/vim-bundler'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'Valloric/YouCompleteMe'
 " Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'jlanzarotta/bufexplorer'
 
@@ -71,11 +70,13 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'henrik/vim-indexed-search'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/clever-f.vim'
 
 "ui
 Plugin 'itchyny/lightline.vim'
+
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

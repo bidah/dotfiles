@@ -1,5 +1,6 @@
 set nocompatible                  
 so ~/.vim/plugins.vim                                 " Manage plugins in their own file
+
 syntax on                                             " Show syntax highlighting
 " filetype plugin indent on
 filetype on                                           " Enable filetype detection
@@ -208,7 +209,18 @@ vnoremap gk k
 
 "}}}
 
+" Make search results appear on middle of screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
 "----------Auto-Commands----------"
+
+" Fix syntax highlight in vue files
+autocmd FileType vue syntax sync fromstart
 
 " Resize splits when the window is resized {{{
 autocmd VimResized * :wincmd =
