@@ -126,8 +126,8 @@ map vv ^vg_
 
 " ref: https://bitbucket.org/sjl/dotfiles/src/tip/vim/vimrc
 " Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+"nnoremap n nzzzv
+"nnoremap N Nzzzv
 
 "command line mappings
 cnoremap <C-a> <Home>
