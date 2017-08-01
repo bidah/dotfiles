@@ -221,6 +221,7 @@ nnoremap g# g#zz
 
 " Fix syntax highlight in vue files
 autocmd FileType vue syntax sync fromstart
+let g:vue_disable_pre_processors=1
 
 " Resize splits when the window is resized {{{
 autocmd VimResized * :wincmd =
