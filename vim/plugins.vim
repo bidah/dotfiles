@@ -23,7 +23,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'posva/vim-vue'
 Plugin 'sekel/vim-vue-syntastic'
 " Plugin 'tpope/vim-bundler'
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 " Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'jlanzarotta/bufexplorer'
 
