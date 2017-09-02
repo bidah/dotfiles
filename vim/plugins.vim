@@ -55,6 +55,8 @@ Plugin 'dracula/vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line' " al, il 
 Plugin 'wellle/targets.vim'
+Plugin 'kana/vim-textobj-function'
+Plugin 'thinca/vim-textobj-function-javascript'
 
 Plugin 'kana/vim-niceblock' 
 

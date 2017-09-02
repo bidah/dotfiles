@@ -207,6 +207,8 @@ vnoremap k gk
 nnoremap gk k
 vnoremap gk k
 
+" Insert space
+nnoremap <space> i<space><esc>
 "}}}
 
 " Make search results appear on middle of screen
@@ -415,3 +417,4 @@ let g:operator#flashy#flash_time = 240
 " Breakline with Enter {{{
 "nnoremap <CR> o<Esc>
 "}}}
+"
