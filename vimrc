@@ -148,9 +148,6 @@ cnoremap <C-e> <End>
 " Repeat last macro if in a normal buffer by hiting enter.
 nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
-"Yank to end of line. (shift-D or shift-C applys to the end of the line. so shift-Y was missing)
-noremap Y y$
-
 " my custom pageups and pagedowns
 nmap <leader>d LztM
 nmap <leader>u HzbM
@@ -218,6 +215,10 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
+
+"Yank to end of line. (shift-D or shift-C applys to the end of the line. so shift-Y was missing)
+noremap Y y$
+
 
 "----------Auto-Commands----------"
 
