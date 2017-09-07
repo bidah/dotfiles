@@ -83,7 +83,7 @@ Plugin 'pangloss/vim-javascript'
 "extends and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers
 Plugin 'junegunn/vim-peekaboo' 
 Plugin 'thinca/vim-qfreplace'
-
+Plugin 'cohama/lexima.vim'
 
 
 " All of your Plugins must be added before the following line
