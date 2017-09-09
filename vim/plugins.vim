@@ -68,7 +68,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'kana/vim-operator-user'
 Plugin 'haya14busa/vim-operator-flashy'
 
-Plugin 'vim-scripts/YankRing.vim'
+Plugin 'LeafCage/yankround.vim'
+
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'henrik/vim-indexed-search'
 

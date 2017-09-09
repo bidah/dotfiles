@@ -36,6 +36,7 @@ set hidden                                            " preserve undo buffers ht
 set history=1000         " remember more commands and search history "http://nvie.com/posts/how-i-boosted-my-vim/
 set undolevels=1000      " use many muchos levels of undo
 set list lcs=tab:\|\ 
+set whichwrap=b,s,h,l,[,],<,> "Allow specified keys to move to the previous/next line
 
 " search down into subfolders
 " Provides tab-completion for all file-related tasks
@@ -219,6 +220,16 @@ nnoremap g# g#zz
 "Yank to end of line. (shift-D or shift-C applys to the end of the line. so shift-Y was missing)
 noremap Y y$
 
+"yankround config
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+
 
 "----------Auto-Commands----------"
 
@@ -320,10 +331,32 @@ set mouse=a " Enable mouse use in all modes
 set ttymouse=xterm2
 
 " folding settings http://smartic.us/2009/04/06/code-folding-in-vim/
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
+"set foldmethod=indent   "fold based on indent
+set foldnestmax=100      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
+"set foldlevel=1         "this is just what i use
+
+
+" Fold {{{
+" Change Keymap for Fold {{{
+noremap [fold] <nop>
+nmap <Space> [fold]
+vmap <Space> [fold]
+
+noremap [fold]j zj
+noremap [fold]k zk
+noremap [fold]n ]z
+noremap [fold]p [z
+noremap <silent>[fold]h :<C-u>call <SID>smart_foldcloser()<CR>
+noremap [fold]l zo
+noremap [fold]L zO
+noremap [fold]a za
+noremap [fold]m zM
+noremap [fold]i zMzvzz
+noremap [fold]r zR
+noremap [fold]f zf
+noremap [fold]d zd
+"}}}
 
 " set tags=./tags,tags "sets ctags
 
@@ -410,7 +443,6 @@ endfunction
 
 map <Leader>n :call RenameFile()<cr>
 
-map <Leader>j <Plug>(easymotion-prefix)
 
 autocmd VimEnter,Colorscheme * :hi Flashy guibg=#197bb7 ctermbg=252
 let g:operator#flashy#flash_time = 240
@@ -418,4 +450,75 @@ let g:operator#flashy#flash_time = 240
 " Breakline with Enter {{{
 "nnoremap <CR> o<Esc>
 "}}}
-"
+
+" EasyMotion Config {{{
+"map <Leader>j <Plug>(easymotion-prefix)
+
+" Enter by <Space> to excute faster & easily
+"autocmd VimEnter,BufEnter * EMCommandLineNoreMap <Space> <CR>
+" autocmd VimEnter,BufEnter * EMCommandLineNoreMap <C-j> <Space>
+
+" =======================================
+" Boost your productivity with EasyMotion
+" =======================================
+" Disable default mappings
+" If you are true vimmer, you should explicitly map keys by yourself.
+" Do not rely on default bidings.
+let g:EasyMotion_do_mapping = 0
+
+" Or map prefix key at least(Default: <Leader><Leader>)
+" map <Leader> <Plug>(easymotion-prefix)
+
+" =======================================
+" Find Motions
+" =======================================
+" Jump to anywhere you want by just `4` or `3` key strokes without thinking!
+" `s{char}{char}{target}`
+nmap s <Plug>(easymotion-overwin-f2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)
+" Of course, you can map to any key you want such as `<Space>`
+" map <Space>(easymotion-s2)
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+
+" =======================================
+" Line Motions
+" =======================================
+" `JK` Motions: Extend line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" keep cursor column with `JK` motions
+let g:EasyMotion_startofline = 0
+
+" =======================================
+" General Configuration
+" =======================================
+let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
+" Show target key with upper case to improve readability
+let g:EasyMotion_use_upper = 1
+" Jump to first match with enter & space
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
+let g:EasyMotion_do_shade = 0
+let g:EasyMotion_startofline = 0
+
+nmap ;L <Plug>(easymotion-overwin-line)
+
+" Replace defaut
+" smart f & F
+omap f <Plug>(easymotion-bd-fl)
+xmap f <Plug>(easymotion-bd-fl)
+" =======================================
+" Search Motions
+" =======================================
+" Extend search motions with vital-over command line interface
+" Incremental highlight of all the matches
+" Now, you don't need to repetitively press `n` or `N` with EasyMotion feature
+" `<Tab>` & `<S-Tab>` to scroll up/down a page with next match
+" :h easymotion-command-line
+nmap g/ <Plug>(easymotion-sn)
+xmap g/ <Plug>(easymotion-sn)
+omap g/ <Plug>(easymotion-tn)
+
