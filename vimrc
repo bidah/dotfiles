@@ -9,7 +9,7 @@ filetype indent on                                    " Enable filetype-specific
 set backspace=start,eol                               " Allow backspacing over the start of insert
 
 let mapleader = "\<Space>"                                   " Set leader key to space
-
+"let g:mapleader = ','
 runtime macros/matchit.vim
 
 " markdown
@@ -102,7 +102,6 @@ vnoremap // y/<C-R>"<CR>
 vnoremap /' y:Ag! <C-R>"<CR>
 nnoremap <silent> = V`]=|                             " Auto indent pasted code in vim
 nmap <leader>vi :tabedit $MYVIMRC<cr>|                " Shortcut to edit .vimrc
-nmap <leader>cu :e frontend/dev/js/src/ui.js<cr>|     " Shortcut 
 nmap <leader>sn :e ~/.vim/snippets/|                  " Open snippets path. Fill in which one to access
 map <leader>a :Ag!<space>|                            " Shortcut for Silver Search
 nnoremap Z ZZ|                                        " Exits saving file
@@ -329,35 +328,6 @@ set mouse=a " Enable mouse use in all modes
 " Set this to the name of your terminal that supports mouse codes.
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
 set ttymouse=xterm2
-
-" folding settings http://smartic.us/2009/04/06/code-folding-in-vim/
-"set foldmethod=indent   "fold based on indent
-set foldnestmax=100      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-"set foldlevel=1         "this is just what i use
-
-
-" Fold {{{
-" Change Keymap for Fold {{{
-noremap [fold] <nop>
-nmap <Space> [fold]
-vmap <Space> [fold]
-
-noremap [fold]j zj
-noremap [fold]k zk
-noremap [fold]n ]z
-noremap [fold]p [z
-noremap <silent>[fold]h :<C-u>call <SID>smart_foldcloser()<CR>
-noremap [fold]l zo
-noremap [fold]L zO
-noremap [fold]a za
-noremap [fold]m zM
-noremap [fold]i zMzvzz
-noremap [fold]r zR
-noremap [fold]f zf
-noremap [fold]d zd
-"}}}
-
 " set tags=./tags,tags "sets ctags
 
 " fugitive Gstatus command
@@ -511,7 +481,7 @@ nmap ;L <Plug>(easymotion-overwin-line)
 omap f <Plug>(easymotion-bd-fl)
 xmap f <Plug>(easymotion-bd-fl)
 " =======================================
-" Search Motions
+" Search Motions (todo: pending)
 " =======================================
 " Extend search motions with vital-over command line interface
 " Incremental highlight of all the matches
@@ -522,3 +492,60 @@ nmap g/ <Plug>(easymotion-sn)
 xmap g/ <Plug>(easymotion-sn)
 omap g/ <Plug>(easymotion-tn)
 
+"accelerates j/k mappings' steps while j or k key is repeating
+"nmap j <Plug>(accelerated_jk_gj)
+"nmap k <Plug>(accelerated_jk_gk)
+
+" Unite {{{
+nnoremap [unite] <Nop>
+xnoremap [unite] <Nop>
+nmap ; [unite]
+xmap ; [unite]
+
+" Source
+nnoremap <silent> [unite]u :<C-u>Unite source -vertical -silent -start-insert<CR>
+" Buffer
+nnoremap <silent> [unite]b :<C-u>Unite -silent buffer file_mru bookmark<CR>
+" File List
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -silent -buffer-name=files file<CR>
+"}}}
+
+" Fold Basic Settings "{{{
+"set foldenable "Enable fold
+"set foldlevel=100 "Folds with a higher level will be closed
+"}}}
+
+"" folding settings http://smartic.us/2009/04/06/code-folding-in-vim/
+""set foldmethod=indent   "fold based on indent
+""set foldnestmax=100      "deepest fold is 10 levels
+""set nofoldenable        "dont fold by default
+""set foldlevel=1         "this is just what i use
+
+" Fold {{{
+" Change Keymap for Fold {{{
+"noremap [fold] <nop>
+"nmap , [fold]
+"vmap , [fold]
+"
+"noremap [fold]j zj
+"noremap [fold]k zk
+"noremap [fold]n ]z
+"noremap [fold]p [z
+""noremap <silent>[fold]h :<C-u>call <SID>smart_foldcloser()<CR>
+"noremap [fold]l zo
+"noremap [fold]L zO
+"noremap [fold]a za
+"noremap [fold]m zM
+"noremap [fold]i zMzvzz
+"noremap [fold]r zR
+"noremap [fold]f zf
+"noremap [fold]d zd
+"}}}
+
+" Leafcage/foldCC {{{
+"set foldmethod=marker
+"set foldtext=FoldCCtext()
+"set foldcolumn=0
+"set fillchars=vert:\|
+"noremap [fold]g :<C-u>echo foldCC#navi()<CR>
+" }}}

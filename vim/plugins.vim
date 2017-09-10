@@ -61,7 +61,10 @@ Plugin 'kana/vim-niceblock'
 
 " Search
 Plugin 'osyo-manga/vim-over' "substitue preview
-Plugin 'Shougo/denite.nvim'
+"Plugin 'Shougo/denite.nvim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neomru.vim' 
+
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 
@@ -85,7 +88,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'junegunn/vim-peekaboo' 
 Plugin 'thinca/vim-qfreplace'
 Plugin 'cohama/lexima.vim'
+Plugin 'rhysd/devdocs.vim'
+"Plugin 'rhysd/accelerated-jk'
 
+Plugin 'Leafcage/foldCC'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
