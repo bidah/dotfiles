@@ -239,9 +239,8 @@ nmap <C-n> <Plug>(yankround-next)
 autocmd FileType vue syntax sync fromstart
 let g:vue_disable_pre_processors=1
 
-" Resize splits when the window is resized {{{
+" Resize splits when the window is resized
 autocmd VimResized * :wincmd =
-"}}}
 
 autocmd User Node
   \ if &filetype == "javascript" |
@@ -283,6 +282,10 @@ augroup autoindenting
   autocmd Filetype vue setlocal ts=4 sts=4 sw=4
 augroup END
 " ref: http://stackoverflow.com/questions/1562633/setting-vim-whitespace-preferences-by-filetype
+"
+" Make folding views automatic http://vim.wikia.com/wiki/Make_views_automatic
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
 
 " Enable seeing-is-believing mappings only for Ruby
 " augroup seeingIsBelievingSettings
