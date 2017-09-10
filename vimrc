@@ -8,7 +8,7 @@ filetype plugin on                                    " Enable filetype-specific
 filetype indent on                                    " Enable filetype-specific indenting
 set backspace=start,eol                               " Allow backspacing over the start of insert
 
-let mapleader = "\<Space>"                                   " Set leader key to space
+let mapleader = "\<Space>"                            " Set leader key to space
 "let g:mapleader = ','
 runtime macros/matchit.vim
 
@@ -206,7 +206,6 @@ vnoremap gk k
 
 " Insert space
 nnoremap <space> i<space><esc>
-"}}}
 
 " Make search results appear on middle of screen
 nnoremap n nzz
@@ -228,10 +227,9 @@ xmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+"}}}
 
-
-"----------Auto-Commands----------"
-
+" Auto Commands {{{
 " Fix syntax highlight in vue files
 autocmd FileType vue syntax sync fromstart
 let g:vue_disable_pre_processors=1
@@ -292,11 +290,9 @@ augroup END
 "   autocmd FileType ruby nmap <buffer> <F6> <Plug>(seeing-is-believing-run)
 "   autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing-is-believing-run)
 " augroup END
+"}}}
 
-
-
-"----------Theme Options----------"
-
+" Theme Options {{{
 " Paper color theme options
 set t_Co=256   " This is may or may not needed.
 set background=light
@@ -307,16 +303,18 @@ let g:lightline = {
       \ 'colorscheme': 'Dracula',
       \ }
 set noshowmode "hide --INSERT-- because lightline handles it
+"}}}
 
 " https://github.com/r00k/dotfiles/blob/master/vimrc
 "map <Leader>bb :!bundle install<cr>
 "nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
 
-" ctrlp config
+" ctrlp config {{{
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
+"}}}
 
 "show hidden files like .rspec
 let g:ctrlp_show_hidden = 1
@@ -335,6 +333,9 @@ set ttymouse=xterm2
 
 "http://bit.ly/2eOP2wL
 " [buffer number] followed by filename:
+
+
+" status line config {{{
 set statusline=[%n]\ %t
 " for Syntastic messages:
 set statusline+=%#warningmsg#
@@ -342,44 +343,35 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 " show line#:column# on the right hand side
 set statusline+=%=%l:%c
+"}}}
+
+" syntastic config {{{
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_vue_checkers = ['eslint']
+" let g:syntastic_scss_checkers = ['sass_lint']
 
 " recomended settings for syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
+"}}}
 
-" syntastic config
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_vue_checkers = ['eslint']
-
-"vim-vue-syntastic configuration to make it work with local project eslint
-" let g:syntastic_vue_checkers = ['eslint']
-" let g:syntastic_scss_checkers = ['sass_lint']
-
+" eslint config {{{
 let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+
 if matchstr(local_eslint, "^\/\\w") == ''
-    let local_eslint = getcwd() . "/" . local_eslint
+  let local_eslint = getcwd() . "/" . local_eslint
 endif
+
 if executable(local_eslint)
-    let g:syntastic_javascript_eslint_exec = local_eslint
-    let g:syntastic_vue_eslint_exec = local_eslint
+  let g:syntastic_javascript_eslint_exec = local_eslint
+  let g:syntastic_vue_eslint_exec = local_eslint
 endif
-
-" use ag in ack.vim
-" if executable('ag')
-"   let g:ackprg = 'ag --vimgrep'
-" endif
-
-" let g:ackprg = 'ag --vimgrep --smart-case'                                                   
-" cnoreabbrev ag Ack                                                                           
-" cnoreabbrev aG Ack                                                                           
-" cnoreabbrev Ag Ack                                                                           
-" cnoreabbrev AG Ack  
+"}}}
 
 " The Silver Searcher https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable('ag')
@@ -393,12 +385,13 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" BufExplorer configuration
+" BufExplorer config (disabled) {{{
 "nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
 " nmap <expr> <script> <silent> <unique> <CR> &buftype ==? '' ? ':BufExplorer<CR>' : '<CR>'
 " let g:bufExplorerDisableDefaultKeyMapping=1
 " let g:bufExplorerShowRelativePath=1
 " let g:bufExplorerShowDirectories = 0
+"}}}
 
 " rename current file https://github.com/r00k/dotfiles/blob/master/vimrc#L313
 function! RenameFile()
@@ -413,9 +406,10 @@ endfunction
 
 map <Leader>n :call RenameFile()<cr>
 
-
+" Fashy config {{{
 autocmd VimEnter,Colorscheme * :hi Flashy guibg=#197bb7 ctermbg=252
 let g:operator#flashy#flash_time = 240
+"}}}
 
 " Breakline with Enter {{{
 "nnoremap <CR> o<Esc>
@@ -492,6 +486,7 @@ nmap g/ <Plug>(easymotion-sn)
 xmap g/ <Plug>(easymotion-sn)
 omap g/ <Plug>(easymotion-tn)
 
+
 "accelerates j/k mappings' steps while j or k key is repeating
 "nmap j <Plug>(accelerated_jk_gj)
 "nmap k <Plug>(accelerated_jk_gk)
@@ -522,7 +517,6 @@ nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -silent -buffer-name=files f
 ""set foldlevel=1         "this is just what i use
 
 " Fold {{{
-" Change Keymap for Fold {{{
 "noremap [fold] <nop>
 "nmap , [fold]
 "vmap , [fold]
