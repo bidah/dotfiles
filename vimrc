@@ -1,20 +1,14 @@
-set nocompatible                  
+set nocompatible                                      " Vim is not vi 
 so ~/.vim/plugins.vim                                 " Manage plugins in their own file
-
 syntax on                                             " Show syntax highlighting
-" filetype plugin indent on
 filetype on                                           " Enable filetype detection
 filetype plugin on                                    " Enable filetype-specific plugins
 filetype indent on                                    " Enable filetype-specific indenting
 set backspace=start,eol                               " Allow backspacing over the start of insert
-
 let mapleader = "\<Space>"                            " Set leader key to space
 "let g:mapleader = ','
 runtime macros/matchit.vim
-
-" markdown
-let g:vim_markdown_conceal = 0
- 
+let g:vim_markdown_conceal = 0                        " markdown
 "set window                                            " Set window title by default
 set modifiable                                        " Make buffer modifiable
 set autoindent                                        " Set auto indent
@@ -32,7 +26,6 @@ set relativenumber                                    " Show line number relativ
 set number                                            " Show line number
 set clipboard=unnamed                                 " Use the system clipboard
 set hidden                                            " preserve undo buffers http://usevim.com/2012/10/19/vim101-set-hidden/
-
 set history=1000         " remember more commands and search history "http://nvie.com/posts/how-i-boosted-my-vim/
 set undolevels=1000      " use many muchos levels of undo
 set list lcs=tab:\|\ 
@@ -44,12 +37,10 @@ set path+=**
 
 " Display all matching files when me tab complete
 set wildmenu                                          
-
 set hlsearch                                          " highlight search
 set incsearch                                         " Instantly take you to word you are searching for (first result)
 set ignorecase                                        " Ignore case when searching...
 set smartcase                                         " ...except if we input a capital letter
-
 let NERDTreeMouseMode=3                               " One click for navigation
 let NERDTreeShowHidden=1                              " Show hidden files in Nerdtree
 let NERDTreeHijackNetrw=1                             " Use NerdTree instead of Netrw in Netrw
@@ -57,17 +48,40 @@ set linebreak
 set splitright                                        " Open new split panes to right
 set splitbelow                                        " Open new split panes to the bottom
 set noerrorbells visualbell t_vb=                     " No bells!
-
-" http://nvie.com/posts/how-i-boosted-my-vim/
-" nmap <silent> ,/ :nohlsearch<CR>                      
+set laststatus=2                                       "see the current filename in vim
 
 " swap files - set them to a new tmp file to remove clutter from app
 set noswapfile
-"set laststatus=2                                      " Always display the status line
 
+"show hidden files like .rspec
+let g:ctrlp_show_hidden = 1
+
+"clever-f
+let g:clever_f_smart_case = 1
+let g:clever_f_across_no_line = 1
+
+set suffixesadd+=.scss
+
+"indent guides 
+let g:indent_guides_auto_colors = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
+
+"accelerates j/k mappings' steps while j or k key is repeating
+"nmap j <Plug>(accelerated_jk_gj)
+"nmap k <Plug>(accelerated_jk_gk)
+
+" fugitive Gstatus command
+" nnoremap S :Gstatus<cr>
+
+"http://bit.ly/2eOP2wL
+" [buffer number] followed by filename:
+
+" http://nvie.com/posts/how-i-boosted-my-vim/
+" nmap <silent> ,/ :nohlsearch<CR>                      
+"set laststatus=2                                      " Always display the status line
 " set textwidth=80 | set colorcolumn=+1                 " Make it obvious where 80 characters is
 " let g:GeeknoteFormat="markdown"                        "format mode when saving on :Geeknote
-
 
 " testing undo feature for going back to with undo after saving 
 " http://stackoverflow.com/questions/17936130/vim-undo-undo-changes-after-file-write
@@ -76,24 +90,15 @@ set noswapfile
 "   set undofile                 "turn on the feature  
 "   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
 " endif 
-"
-set laststatus=2                                       "see the current filename in vim
+ 
+" https://github.com/r00k/dotfiles/blob/master/vimrc
+"map <Leader>bb :!bundle install<cr>
+"nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
 
 " Create tags file
 command! MakeTags !ctags -R .
 
-"indent guides 
-let g:indent_guides_auto_colors = 1
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
-
-"clever-f
-"
-let g:clever_f_smart_case = 1
-let g:clever_f_across_no_line = 1
-
-set suffixesadd+=.scss
-
+" set tags=./tags,tags "sets ctags
 
 " Mappings {{{
 
@@ -305,37 +310,23 @@ let g:lightline = {
 set noshowmode "hide --INSERT-- because lightline handles it
 "}}}
 
-" https://github.com/r00k/dotfiles/blob/master/vimrc
-"map <Leader>bb :!bundle install<cr>
-"nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
-
-" ctrlp config {{{
+" Ctrlp config {{{
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
 "}}}
 
-"show hidden files like .rspec
-let g:ctrlp_show_hidden = 1
-
-"Mouse
+"Mouse config {{{
 " mouse enhanced also by the terminus plugin
 set ttyfast " Send more characters for redraws
 set mouse=a " Enable mouse use in all modes
 " Set this to the name of your terminal that supports mouse codes.
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
 set ttymouse=xterm2
-" set tags=./tags,tags "sets ctags
+"}}}
 
-" fugitive Gstatus command
-" nnoremap S :Gstatus<cr>
-
-"http://bit.ly/2eOP2wL
-" [buffer number] followed by filename:
-
-
-" status line config {{{
+" Status line config {{{
 set statusline=[%n]\ %t
 " for Syntastic messages:
 set statusline+=%#warningmsg#
@@ -345,7 +336,7 @@ set statusline+=%*
 set statusline+=%=%l:%c
 "}}}
 
-" syntastic config {{{
+" Syntastic config {{{
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
@@ -360,7 +351,7 @@ let g:syntastic_vue_checkers = ['eslint']
 "set statusline+=%*
 "}}}
 
-" eslint config {{{
+" Eslint config {{{
 let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
 
 if matchstr(local_eslint, "^\/\\w") == ''
@@ -373,7 +364,7 @@ if executable(local_eslint)
 endif
 "}}}
 
-" The Silver Searcher https://robots.thoughtbot.com/faster-grepping-in-vim
+" The Silver Searcher https://robots.thoughtbot.com/faster-grepping-in-vim {{{
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -384,6 +375,7 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+"}}}
 
 " BufExplorer config (disabled) {{{
 "nmap <script> <silent> <unique> <CR> :BufExplorer<CR>
@@ -393,7 +385,7 @@ endif
 " let g:bufExplorerShowDirectories = 0
 "}}}
 
-" rename current file https://github.com/r00k/dotfiles/blob/master/vimrc#L313
+" Rename current file https://github.com/r00k/dotfiles/blob/master/vimrc#L313{{{
 function! RenameFile()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
@@ -405,6 +397,7 @@ function! RenameFile()
 endfunction
 
 map <Leader>n :call RenameFile()<cr>
+"}}}
 
 " Fashy config {{{
 autocmd VimEnter,Colorscheme * :hi Flashy guibg=#197bb7 ctermbg=252
@@ -485,11 +478,7 @@ xmap f <Plug>(easymotion-bd-fl)
 nmap g/ <Plug>(easymotion-sn)
 xmap g/ <Plug>(easymotion-sn)
 omap g/ <Plug>(easymotion-tn)
-
-
-"accelerates j/k mappings' steps while j or k key is repeating
-"nmap j <Plug>(accelerated_jk_gj)
-"nmap k <Plug>(accelerated_jk_gk)
+"}}}
 
 " Unite {{{
 nnoremap [unite] <Nop>
@@ -508,13 +497,14 @@ nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -silent -buffer-name=files f
 " Fold Basic Settings "{{{
 "set foldenable "Enable fold
 "set foldlevel=100 "Folds with a higher level will be closed
-"}}}
+"
 
-"" folding settings http://smartic.us/2009/04/06/code-folding-in-vim/
+""old folding settings http://smartic.us/2009/04/06/code-folding-in-vim/
 ""set foldmethod=indent   "fold based on indent
 ""set foldnestmax=100      "deepest fold is 10 levels
 ""set nofoldenable        "dont fold by default
 ""set foldlevel=1         "this is just what i use
+"}}}
 
 " Fold {{{
 "noremap [fold] <nop>
@@ -543,3 +533,6 @@ nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -silent -buffer-name=files f
 "set fillchars=vert:\|
 "noremap [fold]g :<C-u>echo foldCC#navi()<CR>
 " }}}
+
+" el barto was here, there, everywhere
+
