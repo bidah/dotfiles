@@ -59,7 +59,9 @@ Plugin 'kana/vim-textobj-function'
 Plugin 'thinca/vim-textobj-function-javascript'
 Plugin 'kana/vim-niceblock' 
 
+
 " Search
+Plugin 'Shougo/vimproc.vim'
 Plugin 'osyo-manga/vim-over' "substitue preview
 "Plugin 'Shougo/denite.nvim'
 Plugin 'Shougo/unite.vim'

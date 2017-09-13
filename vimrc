@@ -302,7 +302,7 @@ autocmd BufWinEnter *.* silent loadview
 
 " Theme Options {{{
 " Paper color theme options
-set t_Co=256   " This is may or may not needed.
+set t_Co=256   " This may or may not be needed.
 set background=light
 "colorscheme PaperColor
 colorscheme dracula
@@ -487,7 +487,7 @@ omap g/ <Plug>(easymotion-tn)
 nnoremap [unite] <Nop>
 xnoremap [unite] <Nop>
 nmap ; [unite]
-xmap ; [unite]
+xmap ; [unite
 
 " Source
 nnoremap <silent> [unite]u :<C-u>Unite source -vertical -silent -start-insert<CR>
@@ -495,6 +495,9 @@ nnoremap <silent> [unite]u :<C-u>Unite source -vertical -silent -start-insert<CR
 nnoremap <silent> [unite]b :<C-u>Unite -silent buffer file_mru bookmark<CR>
 " File List
 nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -silent -buffer-name=files file<CR>
+" Search like ctrl-p
+nnoremap <silent> [unite]<Space> :<C-u>Unite file_rec/async -start-insert<CR>
+
 "}}}
 
 " Fold Basic Settings "{{{
