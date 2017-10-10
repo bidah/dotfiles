@@ -182,7 +182,7 @@ docker_clean() {
 }
 
 #Select node Version
-nvm use 6.0
+nvm use 8.6.0 
 
 # loads rvm into a shell session
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 

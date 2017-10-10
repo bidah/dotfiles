@@ -260,6 +260,11 @@ augroup volt-syntax
   au BufReadPost *.volt set syntax=html
 augroup END
 
+augroup volt-syntax
+  autocmd!
+  au BufReadPost *.pug set ft=pug
+augroup END
+
 "augroup vue-syntax
 "  autocmd!
 "  au BufReadPost *.vue set syntax=html
@@ -313,14 +318,14 @@ let g:lightline = {
 set noshowmode "hide --INSERT-- because lightline handles it
 "}}}
 
-" Ctrlp config {{{
+" Ctrlp Config {{{
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
 "}}}
 
-"Mouse config {{{
+"Mouse Config {{{
 " mouse enhanced also by the terminus plugin
 set ttyfast " Send more characters for redraws
 set mouse=a " Enable mouse use in all modes
@@ -496,7 +501,7 @@ nnoremap <silent> [unite]b :<C-u>Unite -silent buffer file_mru bookmark<CR>
 " File List
 nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -silent -buffer-name=files file<CR>
 " Search like ctrl-p
-nnoremap <silent> [unite]<Space> :<C-u>Unite file_rec/async -start-insert<CR>
+nnoremap <silent> [unite]<Space> :<C-u>Unite file_rec/async:! -start-insert<CR>
 
 "}}}
 
