@@ -23,6 +23,11 @@
 --langmap=js:.js
 --langmap=js:+.jsx
 
+--langdef=Vue
+--langmap=Vue:.vue
+--regex-Vue=/^( {2}|\t)([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*(function[ \t]*\(|\{)/\2/f,field/
+--regex-Vue=/^( {4,}|\t{2,})([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*function[ \t]*\(/\2/f,function/
+
 --regex-js=/[ \t.]([A-Z][A-Z0-9._$]+)[ \t]*[=:][ \t]*([0-9"'\[\{]|null)/\1/n,constant/
 
 --regex-js=/\.([A-Za-z0-9._$]+)[ \t]*=[ \t]*\{/\1/o,object/

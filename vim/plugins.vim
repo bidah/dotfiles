@@ -30,6 +30,10 @@ Plugin 'sekel/vim-vue-syntastic'
 Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-scripts/tlib'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'haya14busa/vim-asterisk'
+
 
 " getting used to (in progress muscle memory)
 Plugin 'tpope/vim-obsession' " save vim session
@@ -50,6 +54,7 @@ Plugin 'Yggdroot/indentLine'
 " themes
 Plugin 'bluz71/vim-moonfly-colors'
 Plugin 'dracula/vim'
+Plugin 'tomasiser/vim-code-dark'
 
 " text objects
 Plugin 'kana/vim-textobj-user'
@@ -72,6 +77,7 @@ Plugin 'easymotion/vim-easymotion'
 
 Plugin 'kana/vim-operator-user'
 Plugin 'haya14busa/vim-operator-flashy'
+Plugin 'haya14busa/vim-edgemotion'
 
 Plugin 'LeafCage/yankround.vim'
 

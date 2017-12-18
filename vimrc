@@ -11,7 +11,7 @@ runtime macros/matchit.vim
 let g:vim_markdown_conceal = 0                        " markdown
 "set window                                            " Set window title by default
 set modifiable                                        " Make buffer modifiable
-set autoindent                                        " Set auto indent
+set autoindent                                        " Vim preserves the same level of indentation each time we create a new line
 set copyindent                                        " copy the previous indentation on autoindenting (look for in google)
 set ts=2                                              " Set indent to 2 spaces
 set shiftwidth=2
@@ -49,7 +49,9 @@ set splitright                                        " Open new split panes to 
 set splitbelow                                        " Open new split panes to the bottom
 set noerrorbells visualbell t_vb=                     " No bells!
 set laststatus=2                                       "see the current filename in vim
-
+"set iskeyword-=. "not working
+"let g:sh_isk  = '.'
+"let g:sh_noisk= 1  " otherwise, if this exists, the isk will NOT chg
 " swap files - set them to a new tmp file to remove clutter from app
 set noswapfile
 
@@ -126,6 +128,8 @@ nnoremap <leader>o :cope<CR>|                         " [ope]n quickfix window
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
 
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
 " `vv` to highlight just the text (i.e. no indents) in a line
 map vv ^vg_
 
@@ -133,7 +137,6 @@ map vv ^vg_
 " Keep search matches in the middle of the window.
 "nnoremap n nzzzv
 "nnoremap N Nzzzv
-
 "command line mappings
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
@@ -210,20 +213,12 @@ nnoremap gk k
 vnoremap gk k
 
 " Insert space
-nnoremap <space> i<space><esc>
-
-" Make search results appear on middle of screen
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
+"nnoremap <space> i<space><esc>
 
 "Yank to end of line. (shift-D or shift-C applys to the end of the line. so shift-Y was missing)
 noremap Y y$
 
-"yankround config
+" Yankround config {{{
 nmap p <Plug>(yankround-p)
 xmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
@@ -545,5 +540,52 @@ nnoremap <silent> [unite]<Space> :<C-u>Unite file_rec/async:! -start-insert<CR>
 "noremap [fold]g :<C-u>echo foldCC#navi()<CR>
 " }}}
 
-" el barto was here, there, everywhere
+" Make search results appear on middle of screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
+"https://vi.stackexchange.com/questions/10775/how-can-i-automatically-center-first-search-result/10776
+cnoremap <expr> <CR> getcmdtype() == '/' ? '<CR>zz' : '<CR>'
+
+"visually select last pasted text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+"incsearch config {{{
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+
+" map z/ <Plug>(incsearch-fuzzyspell-/)
+" map z? <Plug>(incsearch-fuzzyspell-?)
+" map zg/ <Plug>(incsearch-fuzzyspell-stay)
+
+" turns 'hlsearch' off automatically after searching-related motions.
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+"}}}
+
+"vim-asterisk config {{{
+" map *   <Plug>(asterisk-*)
+" map #   <Plug>(asterisk-#)
+" map g*  <Plug>(asterisk-g*)
+" map g#  <Plug>(asterisk-g#)
+" map z*  <Plug>(asterisk-z*)
+" map gz* <Plug>(asterisk-gz*)
+" map z#  <Plug>(asterisk-z#)
+" map gz# <Plug>(asterisk-gz#)
+" }}}
+
+" el barto was here, there, everywhere
