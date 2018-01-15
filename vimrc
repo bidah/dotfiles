@@ -330,7 +330,7 @@ let g:operator#flashy#flash_time = 240
 "autocmd VimEnter,BufEnter * EMCommandLineNoreMap <Space> <CR>
 " autocmd VimEnter,BufEnter * EMCommandLineNoreMap <C-j> <Space>
 
-let g:EasyMotion_do_mapping = 1
+let g:EasyMotion_do_mapping = 0
 
 " Or map prefix key at least(Default: <Leader><Leader>)
 " map <Leader> <Plug>(easymotion-prefix)
