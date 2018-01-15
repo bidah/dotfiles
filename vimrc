@@ -48,15 +48,14 @@ set linebreak
 set splitright                                        " Open new split panes to right
 set splitbelow                                        " Open new split panes to the bottom
 set noerrorbells visualbell t_vb=                     " No bells!
-set laststatus=2                                       "see the current filename in vim
+set laststatus=2                                      " See the current filename in vim
 "set iskeyword-=. "not working
 "let g:sh_isk  = '.'
 "let g:sh_noisk= 1  " otherwise, if this exists, the isk will NOT chg
 " swap files - set them to a new tmp file to remove clutter from app
 set noswapfile
 
-"show hidden files like .rspec
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_show_hidden = 1                           " Show hidden files like .rspec
 
 "clever-f
 let g:clever_f_smart_case = 1
@@ -69,13 +68,6 @@ let g:indent_guides_auto_colors = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgray   ctermbg=254
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=253
 
-"accelerates j/k mappings' steps while j or k key is repeating
-"nmap j <Plug>(accelerated_jk_gj)
-"nmap k <Plug>(accelerated_jk_gk)
-
-" fugitive Gstatus command
-" nnoremap S :Gstatus<cr>
-
 "http://bit.ly/2eOP2wL
 " [buffer number] followed by filename:
 
@@ -83,11 +75,9 @@ let g:indent_guides_auto_colors = 1
 " nmap <silent> ,/ :nohlsearch<CR>                      
 "set laststatus=2                                      " Always display the status line
 " set textwidth=80 | set colorcolumn=+1                 " Make it obvious where 80 characters is
-" let g:GeeknoteFormat="markdown"                        "format mode when saving on :Geeknote
 
 " testing undo feature for going back to with undo after saving 
 " http://stackoverflow.com/questions/17936130/vim-undo-undo-changes-after-file-write
-
 " if has('persistent_undo')      "check if your vim version supports it
 "   set undofile                 "turn on the feature  
 "   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
@@ -99,8 +89,6 @@ let g:indent_guides_auto_colors = 1
 
 " Create tags file
 command! MakeTags !ctags -R .
-
-" set tags=./tags,tags "sets ctags
 
 " Mappings {{{
 
@@ -120,7 +108,6 @@ nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
 map <leader>t :NERDTreeToggle<CR>|                    " Open Nerdtree
 nnoremap <leader>c :ccl<CR>|                          " cl[ose] quickfix window
 nnoremap <leader>o :cope<CR>|                         " [ope]n quickfix window
-"imap <C-y> <C-y>,|                                    " Emmet shortcut
 
 " Move faster between windows. Instead of Ctrl-w + hjkl, just use Ctrl + hjkl
 "map <C-h> <C-w>h
@@ -137,6 +124,7 @@ map vv ^vg_
 " Keep search matches in the middle of the window.
 "nnoremap n nzzzv
 "nnoremap N Nzzzv
+
 "command line mappings
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
@@ -148,11 +136,6 @@ cnoremap <C-e> <End>
 " cnoremap <expr> <Tab> getcmdtype() == '/' \|\| getcmdtype() == '?' ? '<CR>/<C-r>/' : '<C-z>'
 " cnoremap <expr> <S-Tab> getcmdtype() == '/' \|\| getcmdtype() == '?' ? '<CR>?<C-r>/' : '<S-Tab>'
 
-"normal mappings
-"Toggle fold at current position
-"(deprecated because it breaks the jumping list C-i command because C-i and tab are strictly equivalent)
-" nnoremap <Tab> za
-
 " Repeat last macro if in a normal buffer by hiting enter.
 " nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
@@ -160,7 +143,7 @@ cnoremap <C-e> <End>
 nmap <leader>d LztM
 nmap <leader>u HzbM
 
-" bind K to grep word under cursor
+" bind capital K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " turn off search highlighting. NOTE: choca con vim vinegar
@@ -227,78 +210,6 @@ xmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
-"}}}
-
-" Auto Commands {{{
-autocmd BufEnter * :syntax sync fromstart
-" Fix syntax highlight in vue files
-autocmd FileType vue syntax sync fromstart
-let g:vue_disable_pre_processors=1
-
-" Resize splits when the window is resized
-autocmd VimResized * :wincmd =
-
-autocmd User Node
-      \ if &filetype == "javascript" |
-      \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
-      \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
-      \ endif
-
-"Automatically source the .vimrc file on save
-augroup autosourcing
-  autocmd!
-  autocmd BufWritePost .vimrc source %
-  " au BufWritePost .vimrc so $MYVIMRC " auto loads .vimrc when saved http://mixandgo.com/blog/vim-config-for-rails-ninjas
-augroup END
-
-augroup volt-syntax
-  autocmd!
-  au BufReadPost *.volt set syntax=html
-augroup END
-
-augroup volt-syntax
-  autocmd!
-  au BufReadPost *.pug set ft=pug
-augroup END
-
-"augroup vue-syntax
-"  autocmd!
-"  au BufReadPost *.vue set syntax=html
-"augroup END
-"
-augroup hbs-syntax
-  autocmd!
-  au BufReadPost *.hbs set syntax=html
-augroup END
-
-
-" autocmd Filetype scss setlocal ts=4 sts=4 sw=4
-"expandtab is missing and it replaces tabs with spaces
-augroup autoindenting
-  autocmd!
-  autocmd Filetype html setlocal ts=4 sts=4 sw=4
-  autocmd Filetype volt setlocal ts=4 sts=4 sw=4
-  autocmd Filetype php setlocal ts=4 sts=4 sw=4
-  autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
-  autocmd Filetype vue setlocal ts=4 sts=4 sw=4
-augroup END
-" ref: http://stackoverflow.com/questions/1562633/setting-vim-whitespace-preferences-by-filetype
-"
-" Make folding views automatic http://vim.wikia.com/wiki/Make_views_automatic
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
-
-" Enable seeing-is-believing mappings only for Ruby
-" augroup seeingIsBelievingSettings
-"   autocmd!
-"   autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-"   autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-"   autocmd FileType ruby nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
-"   autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
-"   autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
-"   autocmd FileType ruby nmap <buffer> <F6> <Plug>(seeing-is-believing-run)
-"   autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing-is-believing-run)
-" augroup END
 "}}}
 
 " Theme Options {{{
@@ -419,12 +330,6 @@ let g:operator#flashy#flash_time = 240
 "autocmd VimEnter,BufEnter * EMCommandLineNoreMap <Space> <CR>
 " autocmd VimEnter,BufEnter * EMCommandLineNoreMap <C-j> <Space>
 
-" =======================================
-" Boost your productivity with EasyMotion
-" =======================================
-" Disable default mappings
-" If you are true vimmer, you should explicitly map keys by yourself.
-" Do not rely on default bidings.
 let g:EasyMotion_do_mapping = 0
 
 " Or map prefix key at least(Default: <Leader><Leader>)
@@ -588,7 +493,78 @@ map g# <Plug>(incsearch-nohl-g#)
 " map gz# <Plug>(asterisk-gz#)
 " }}}
 
+" inner word changed to w. much faster.
 onoremap w iw
 vnoremap w iw
+
+
+" Auto Commands {{{
+
+"Automatically source the .vimrc file on save
+augroup autosourcing
+  autocmd!
+  autocmd BufWritePost .vimrc source %
+  " au BufWritePost .vimrc so $MYVIMRC " auto loads .vimrc when saved http://mixandgo.com/blog/vim-config-for-rails-ninjas
+augroup END
+
+autocmd BufEnter * :syntax sync fromstart
+
+" Fix syntax highlight in vue files
+autocmd FileType vue syntax sync fromstart
+let g:vue_disable_pre_processors=1
+
+" Resize splits when the window is resized
+autocmd VimResized * :wincmd =
+
+autocmd User Node
+  \ if &filetype == "javascript" |
+  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+  \ endif
+
+augroup volt-syntax
+  autocmd!
+  au BufReadPost *.volt set syntax=html
+augroup END
+
+" augroup volt-syntax
+"   autocmd!
+"   au BufReadPost *.pug set ft=pug
+" augroup END
+
+augroup hbs-syntax
+  autocmd!
+  au BufReadPost *.hbs set syntax=html
+augroup END
+
+
+" autocmd Filetype scss setlocal ts=4 sts=4 sw=4
+"expandtab is missing and it replaces tabs with spaces
+augroup autoindenting
+  autocmd!
+  autocmd Filetype html setlocal ts=4 sts=4 sw=4
+  autocmd Filetype volt setlocal ts=4 sts=4 sw=4
+  autocmd Filetype php setlocal ts=4 sts=4 sw=4
+  autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+  autocmd Filetype vue setlocal ts=4 sts=4 sw=4
+augroup END
+" ref: http://stackoverflow.com/questions/1562633/setting-vim-whitespace-preferences-by-filetype
+"
+" Make folding views automatic http://vim.wikia.com/wiki/Make_views_automatic
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+
+" Enable seeing-is-believing mappings only for Ruby
+" augroup seeingIsBelievingSettings
+"   autocmd!
+"   autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+"   autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+"   autocmd FileType ruby nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+"   autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+"   autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+"   autocmd FileType ruby nmap <buffer> <F6> <Plug>(seeing-is-believing-run)
+"   autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing-is-believing-run)
+" augroup END
+"}}}
 
 " el barto was here, there, everywhere
