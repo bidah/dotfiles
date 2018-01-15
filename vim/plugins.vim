@@ -32,7 +32,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-scripts/tlib'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
-Plugin 'haya14busa/vim-asterisk'
+"store Plugin 'haya14busa/vim-asterisk'
 
 
 " getting used to (in progress muscle memory)
@@ -62,6 +62,7 @@ Plugin 'kana/vim-textobj-line' " al, il
 Plugin 'wellle/targets.vim'
 Plugin 'kana/vim-textobj-function'
 Plugin 'thinca/vim-textobj-function-javascript'
+Plugin 'rhysd/vim-textobj-anyblock'
 Plugin 'kana/vim-niceblock' 
 
 
@@ -82,7 +83,8 @@ Plugin 'haya14busa/vim-edgemotion'
 Plugin 'LeafCage/yankround.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'henrik/vim-indexed-search'
+"Plugin 'henrik/vim-indexed-search'
+" was not working. 
 
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/clever-f.vim'
@@ -96,10 +98,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'junegunn/vim-peekaboo' 
 Plugin 'thinca/vim-qfreplace'
 Plugin 'cohama/lexima.vim'
-Plugin 'rhysd/devdocs.vim'
+"Plugin 'rhysd/devdocs.vim'
 "Plugin 'rhysd/accelerated-jk'
 
-Plugin 'Leafcage/foldCC'
+"Plugin 'Leafcage/foldCC'
 
 Plugin 'digitaltoad/vim-pug'
 

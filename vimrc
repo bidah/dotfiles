@@ -92,7 +92,7 @@ let g:indent_guides_auto_colors = 1
 "   set undofile                 "turn on the feature  
 "   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
 " endif 
- 
+
 " https://github.com/r00k/dotfiles/blob/master/vimrc
 "map <Leader>bb :!bundle install<cr>
 "nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
@@ -154,7 +154,7 @@ cnoremap <C-e> <End>
 " nnoremap <Tab> za
 
 " Repeat last macro if in a normal buffer by hiting enter.
-nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
+" nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
 " my custom pageups and pagedowns
 nmap <leader>d LztM
@@ -230,6 +230,7 @@ nmap <C-n> <Plug>(yankround-next)
 "}}}
 
 " Auto Commands {{{
+autocmd BufEnter * :syntax sync fromstart
 " Fix syntax highlight in vue files
 autocmd FileType vue syntax sync fromstart
 let g:vue_disable_pre_processors=1
@@ -238,16 +239,16 @@ let g:vue_disable_pre_processors=1
 autocmd VimResized * :wincmd =
 
 autocmd User Node
-  \ if &filetype == "javascript" |
-  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
-  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
-  \ endif
+      \ if &filetype == "javascript" |
+      \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+      \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+      \ endif
 
 "Automatically source the .vimrc file on save
 augroup autosourcing
   autocmd!
   autocmd BufWritePost .vimrc source %
-" au BufWritePost .vimrc so $MYVIMRC " auto loads .vimrc when saved http://mixandgo.com/blog/vim-config-for-rails-ninjas
+  " au BufWritePost .vimrc so $MYVIMRC " auto loads .vimrc when saved http://mixandgo.com/blog/vim-config-for-rails-ninjas
 augroup END
 
 augroup volt-syntax
@@ -272,7 +273,7 @@ augroup END
 
 
 " autocmd Filetype scss setlocal ts=4 sts=4 sw=4
- "expandtab is missing and it replaces tabs with spaces
+"expandtab is missing and it replaces tabs with spaces
 augroup autoindenting
   autocmd!
   autocmd Filetype html setlocal ts=4 sts=4 sw=4
@@ -437,8 +438,6 @@ let g:EasyMotion_do_mapping = 0
 nmap s <Plug>(easymotion-overwin-f2)
 xmap s <Plug>(easymotion-s2)
 omap z <Plug>(easymotion-s2)
-" Of course, you can map to any key you want such as `<Space>`
-" map <Space>(easymotion-s2)
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -458,8 +457,9 @@ let g:EasyMotion_startofline = 0
 let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 " Show target key with upper case to improve readability
 let g:EasyMotion_use_upper = 1
+
 " Jump to first match with enter & space
-let g:EasyMotion_enter_jump_first = 1
+"let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
 let g:EasyMotion_do_shade = 0
 let g:EasyMotion_startofline = 0
@@ -587,5 +587,8 @@ map g# <Plug>(incsearch-nohl-g#)
 " map z#  <Plug>(asterisk-z#)
 " map gz# <Plug>(asterisk-gz#)
 " }}}
+
+onoremap w iw
+vnoremap w iw
 
 " el barto was here, there, everywhere
