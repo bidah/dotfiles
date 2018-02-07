@@ -93,7 +93,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
 
 "extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers
-" Plugin 'junegunn/vim-peekaboo' 
+Plugin 'junegunn/vim-peekaboo' 
 Plugin 'thinca/vim-qfreplace'
 Plugin 'cohama/lexima.vim' "auto close parenthesis
 
