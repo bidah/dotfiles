@@ -220,7 +220,7 @@ let g:ctrlp_match_window_reversed = 0
 "}}}
 
 "Mouse Config {{{
-if has('nvim')
+if has('vim')
   " mouse enhanced also by the terminus plugin
   set ttyfast " Send more characters for redraws
   set mouse=a " Enable mouse use in all modes
