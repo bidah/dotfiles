@@ -6,10 +6,11 @@ call vundle#begin()
 "Plugin 'nathanaelkane/vim-indent-guides'
 " Plugin 'hwartig/vim-seeing-is-believing'
 " Plugin 'AndrewRadev/splitjoin.vim'
+"Plugin 'vim-ruby/vim-ruby'
+"
 Plugin 'VundleVim/Vundle.vim' "Let Vundle manage Vundle, required
 
 Plugin 'wincent/terminus'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
@@ -31,6 +32,7 @@ Plugin 'vim-scripts/LustyJuggler'
 Plugin 'moll/vim-node'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
+
 " themes
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'bluz71/vim-moonfly-colors'
@@ -44,6 +46,7 @@ Plugin 'kana/vim-textobj-function'
 Plugin 'thinca/vim-textobj-function-javascript'
 Plugin 'rhysd/vim-textobj-anyblock'
 Plugin 'kana/vim-niceblock' 
+
 " Search
 Plugin 'Shougo/vimproc.vim'
 " Plugin 'osyo-manga/vim-over' "substitue preview (review because it was not working)
@@ -58,8 +61,8 @@ Plugin 'haya14busa/vim-operator-flashy'
 Plugin 'haya14busa/vim-edgemotion'
 Plugin 'LeafCage/yankround.vim'
 Plugin 'editorconfig/editorconfig-vim'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/clever-f.vim'
+
 "ui
 Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'

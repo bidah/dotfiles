@@ -50,10 +50,6 @@ set splitright                                        " Open new split panes to 
 set splitbelow                                        " Open new split panes to the bottom
 set noerrorbells visualbell t_vb=                     " No bells!
 set laststatus=2                                      " See the current filename in vim
-"set iskeyword-=. "not working
-"let g:sh_isk  = '.'
-"let g:sh_noisk= 1  " otherwise, if this exists, the isk will NOT chg
-" swap files - set them to a new tmp file to remove clutter from app
 set noswapfile
 
 let g:ctrlp_show_hidden = 1                           " Show hidden files like .rspec
@@ -94,8 +90,10 @@ command! MakeTags !ctags -R .
 " Mappings {{{
 
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
+nnoremap <leader>z <C-z>|                                  " Go to shell (suspend)
 vnoremap // y/<C-R>"<CR>
 vnoremap /' y:Ag! <C-R>"<CR>
+
 nnoremap <silent> = V`]=|                             " Auto indent pasted code in vim
 nmap <leader>vi :tabedit $MYVIMRC<cr>|                " Shortcut to edit .vimrc
 nmap <leader>sn :e ~/.vim/snippets/|                  " Open snippets path. Fill in which one to access
@@ -103,7 +101,7 @@ map <leader>a :Ag!<space>|                            " Shortcut for Silver Sear
 nnoremap Z ZZ|                                        " Exits saving file
 nnoremap Q ZQ|                                        " Exits without saving file
 map <leader>m :!open -a "Marked 2" %<cr><cr>|         " Open markdown preview in Marked app
-map <leader>z <C-z>|                                  " Go to shell (suspend)
+" map <leader>z <C-z>|                                  " Go to shell (suspend)
 nnoremap <leader><leader> <c-^>|                      " Remap to switch between last opened file
 nnoremap <slient> <Esc> :nohlsearch<Bar>:echo<CR>|    " Cancel search with Esc
 map <leader>t :NERDTreeToggle<CR>|                    " Open Nerdtree
@@ -339,7 +337,6 @@ let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 let g:EasyMotion_use_upper = 1
 
 " Jump to first match with enter & space
-"let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
 let g:EasyMotion_do_shade = 0
 let g:EasyMotion_startofline = 0
