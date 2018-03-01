@@ -18,13 +18,11 @@ Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'posva/vim-vue'
 Plugin 'sekel/vim-vue-syntastic'
+Plugin 'posva/vim-vue'
 Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-scripts/tlib'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'tpope/vim-obsession' " save vim session
 Plugin 'tommcdo/vim-lion'
 Plugin 'tpope/vim-repeat' "  make vim-commentary and vim-surround work with .
@@ -33,11 +31,15 @@ Plugin 'moll/vim-node'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
 
+Plugin 'haya14busa/incsearch.vim'
+"Plugin 'haya14busa/incsearch-fuzzy.vim'
+
 " themes
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'bluz71/vim-moonfly-colors'
 Plugin 'dracula/vim'
 Plugin 'tomasiser/vim-code-dark'
+
 " text objects
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line' " al, il 
@@ -48,7 +50,7 @@ Plugin 'rhysd/vim-textobj-anyblock'
 Plugin 'kana/vim-niceblock' 
 
 " Search
-Plugin 'Shougo/vimproc.vim'
+" Plugin 'Shougo/vimproc.vim'
 " Plugin 'osyo-manga/vim-over' "substitue preview (review because it was not working)
 " Plugin 'Shougo/denite.nvim'
 " Plugin 'Shougo/unite.vim'

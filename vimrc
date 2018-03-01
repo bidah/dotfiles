@@ -34,7 +34,7 @@ set whichwrap=b,s,h,l,[,],<,> "Allow specified keys to move to the previous/next
 
 " search down into subfolders
 " Provides tab-completion for all file-related tasks
-set path+=**
+set path+=** " para buscar recursivamente con :find
 
 " Display all matching files when me tab complete
 set wildmenu                                          
@@ -90,7 +90,7 @@ command! MakeTags !ctags -R .
 " Mappings {{{
 
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
-nnoremap <leader>z <C-z>|                                  " Go to shell (suspend)
+nnoremap z <C-z>|                                  " Go to shell (suspend)
 vnoremap // y/<C-R>"<CR>
 vnoremap /' y:Ag! <C-R>"<CR>
 
