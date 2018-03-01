@@ -90,7 +90,7 @@ command! MakeTags !ctags -R .
 " Mappings {{{
 
 " '|' pipe symbol separates commands in vim (used to add comments on the same line)
-nnoremap z <C-z>|                                  " Go to shell (suspend)
+nnoremap <leader>z <C-z>|                                  " Go to shell (suspend)
 vnoremap // y/<C-R>"<CR>
 vnoremap /' y:Ag! <C-R>"<CR>
 
@@ -108,8 +108,6 @@ map <leader>t :NERDTreeToggle<CR>|                    " Open Nerdtree
 nnoremap <leader>c :ccl<CR>|                          " cl[ose] quickfix window
 nnoremap <leader>o :cope<CR>|                         " [ope]n quickfix window
 
-map <C-j> <Plug>(edgemotion-j)
-map <C-k> <Plug>(edgemotion-k)
 " `vv` to highlight just the text (i.e. no indents) in a line
 map vv ^vg_
 
@@ -564,4 +562,6 @@ augroup END
 " endfunction
 "}}}
 
+map J <Plug>(edgemotion-j)
+map K <Plug>(edgemotion-k)
 " el barto was here, there, everywhere
