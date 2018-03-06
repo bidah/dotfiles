@@ -130,7 +130,7 @@ nmap <leader>d LztM
 nmap <leader>u HzbM
 
 " bind capital K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " turn off search highlighting. NOTE: choca con vim vinegar
 nnoremap - :noh<cr>

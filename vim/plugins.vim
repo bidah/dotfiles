@@ -29,7 +29,7 @@ Plugin 'tpope/vim-repeat' "  make vim-commentary and vim-surround work with .
 Plugin 'vim-scripts/LustyJuggler'
 Plugin 'moll/vim-node'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine' "display indentation line
 
 Plugin 'haya14busa/incsearch.vim'
 "Plugin 'haya14busa/incsearch-fuzzy.vim'
@@ -70,8 +70,8 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
 
 "extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers
-Plugin 'junegunn/vim-peekaboo' 
-Plugin 'thinca/vim-qfreplace'
+"Plugin 'junegunn/vim-peekaboo' 
+"Plugin 'thinca/vim-qfreplace'
 Plugin 'cohama/lexima.vim' "auto close parenthesis
 
 " All of your Plugins must be added before the following line
