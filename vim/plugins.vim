@@ -26,7 +26,7 @@ Plugin 'vim-scripts/tlib'
 Plugin 'tpope/vim-obsession' " save vim session
 Plugin 'tommcdo/vim-lion'
 Plugin 'tpope/vim-repeat' "  make vim-commentary and vim-surround work with .
-Plugin 'vim-scripts/LustyJuggler'
+" Plugin 'vim-scripts/LustyJuggler'
 Plugin 'moll/vim-node'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine' "display indentation line

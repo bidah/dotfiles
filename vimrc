@@ -282,7 +282,7 @@ function! RenameFile()
   endif
 endfunction
 
-map <Leader>n :call RenameFile()<cr>
+"map <Leader>n :call RenameFile()<cr>
 "}}}
 
 " Fashy config {{{
@@ -435,9 +435,9 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-map z/ <Plug>(incsearch-fuzzy-/)
-map z? <Plug>(incsearch-fuzzy-?)
-map zg/ <Plug>(incsearch-fuzzy-stay)
+"map z/ <Plug>(incsearch-fuzzy-/)
+"map z? <Plug>(incsearch-fuzzy-?)
+"map zg/ <Plug>(incsearch-fuzzy-stay)
 
 " map z/ <Plug>(incsearch-fuzzyspell-/)
 " map z? <Plug>(incsearch-fuzzyspell-?)

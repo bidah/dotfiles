@@ -59,7 +59,7 @@ cdpath=($HOME/crazycake $HOME/dropbox/markdown)
   # get symlinked into /usr/local
   # export USR_PATHS="/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin"
 
-export PATH="/usr/local:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin"
+export PATH="/Applications/Genymotion.app/Contents/MacOS/tools:/usr/local:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # adds woff2_compress
