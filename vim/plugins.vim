@@ -14,7 +14,6 @@ Plugin 'wincent/terminus'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'w0rp/ale'
@@ -68,10 +67,13 @@ Plugin 'rhysd/clever-f.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
 
+Plugin 'Shougo/context_filetype.vim'
+Plugin 'tyru/caw.vim'
 "extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers
 "Plugin 'junegunn/vim-peekaboo' 
 "Plugin 'thinca/vim-qfreplace'
-Plugin 'cohama/lexima.vim' "auto close parenthesis
+Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'cohama/lexima.vim' "auto close parenthesis
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

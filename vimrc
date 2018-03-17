@@ -564,4 +564,11 @@ augroup END
 
 map J <Plug>(edgemotion-j)
 map K <Plug>(edgemotion-k)
+
+" prettier config {{{
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+" }}}
+
 " el barto was here, there, everywhere
