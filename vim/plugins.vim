@@ -66,6 +66,7 @@ Plugin 'rhysd/clever-f.vim'
 "ui
 Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 Plugin 'Shougo/context_filetype.vim'
 Plugin 'tyru/caw.vim'

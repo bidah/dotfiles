@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/rodrigofigueroa1/.oh-my-zsh
+export ANDROID_HOME="/Users/rodrigofigueroa1/Library/Android/sdk"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -59,7 +60,7 @@ cdpath=($HOME/crazycake $HOME/dropbox/markdown)
   # get symlinked into /usr/local
   # export USR_PATHS="/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin"
 
-export PATH="/Applications/Genymotion.app/Contents/MacOS/tools:/usr/local:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin"
+export PATH="/Applications/Genymotion.app/Contents/MacOS/tools:/usr/local:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:/Users/rodrigofigueroa1/Library/Android/sdk"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # adds woff2_compress
