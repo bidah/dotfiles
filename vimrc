@@ -38,6 +38,7 @@ set path+=** " para buscar recursivamente con :find
 
 " Display all matching files when me tab complete
 set wildmenu                                          
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules
 set hlsearch                                          " highlight search
 set incsearch                                         " Instantly take you to word you are searching for (first result)
 set ignorecase                                        " Ignore case when searching...
@@ -570,5 +571,7 @@ let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fix_on_save = 1
 " }}}
+
+let g:jsx_ext_required = 1
 
 " el barto was here, there, everywhere
