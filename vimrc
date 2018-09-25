@@ -55,6 +55,12 @@ set noswapfile
 
 let g:ctrlp_show_hidden = 1                           " Show hidden files like .rspec
 
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+if has('nvim')
+  tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+endif
+
 "clever-f
 let g:clever_f_smart_case = 1
 let g:clever_f_across_no_line = 1
@@ -382,10 +388,10 @@ omap g/ <Plug>(easymotion-tn)
 "
 
 ""old folding settings http://smartic.us/2009/04/06/code-folding-in-vim/
-""set foldmethod=indent   "fold based on indent
-""set foldnestmax=100      "deepest fold is 10 levels
-""set nofoldenable        "dont fold by default
-""set foldlevel=1         "this is just what i use
+set foldmethod=indent   "fold based on indent
+set foldnestmax=100      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 "}}}
 
 " Fold {{{
@@ -572,6 +578,6 @@ let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fix_on_save = 1
 " }}}
 
-let g:jsx_ext_required = 1
+let g:jsx_ext_required = 0
 
 " el barto was here, there, everywhere

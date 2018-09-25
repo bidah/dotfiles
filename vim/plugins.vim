@@ -69,12 +69,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
 Plugin 'Shougo/context_filetype.vim'
-Plugin 'tyru/caw.vim'
+Plugin 'tyru/caw.vim' "commments
 "extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers
 "Plugin 'junegunn/vim-peekaboo' 
-"Plugin 'thinca/vim-qfreplace'
+"Plugin 'thinca/vim-qfreplace' " not working win neovim
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'cohama/lexima.vim' "auto close parenthesis
+
+Plugin 'sbdchd/neoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
