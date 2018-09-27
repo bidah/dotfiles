@@ -40,7 +40,8 @@ Plugin 'tomasiser/vim-code-dark'
 
 " text objects
 Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-line' " al, il 
+"Plugin 'kana/vim-textobj-line' " al, il 
+" esta chocando con targets.vim. TODO fix it
 Plugin 'wellle/targets.vim'
 Plugin 'kana/vim-textobj-function'
 Plugin 'thinca/vim-textobj-function-javascript'

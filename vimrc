@@ -341,7 +341,7 @@ let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 " Show target key with upper case to improve readability
 let g:EasyMotion_use_upper = 1
 
-" Jump to first match with enter & space
+" Jump to first match with space
 let g:EasyMotion_space_jump_first = 1
 let g:EasyMotion_do_shade = 0
 let g:EasyMotion_startofline = 0
@@ -579,5 +579,10 @@ let g:ale_fix_on_save = 1
 " }}}
 
 let g:jsx_ext_required = 0
+
+
+" textobj-line
+vmap aL <Plug>(textobj-line-a) 
+vmap iL <Plug>(textobj-line-i)
 
 " el barto was here, there, everywhere
