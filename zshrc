@@ -60,7 +60,7 @@ cdpath=($HOME/crazycake $HOME/dropbox/markdown)
   # get symlinked into /usr/local
   # export USR_PATHS="/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin"
 
-export PATH="/Applications/Genymotion.app/Contents/MacOS/tools:/usr/local:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:/Users/rodrigofigueroa1/Library/Android/sdk"
+export PATH="/Applications/Genymotion.app/Contents/MacOS/tools:/usr/local:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:/Users/rodrigofigueroa1/Library/Android/sdk://usr/bin/python"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # adds woff2_compress
@@ -183,7 +183,7 @@ docker_clean() {
 }
 
 #Select node Version
-nvm use 8.6.0 
+nvm use 11.6.0 
 
 # loads rvm into a shell session
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
@@ -195,3 +195,10 @@ eval "$(rbenv init -)"
 fpath=($HOME/.zsh/completion $fpath)
 autoload -U compinit
 compinit
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/rodrigofigueroa1/.nvm/versions/node/v8.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/rodrigofigueroa1/.nvm/versions/node/v8.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/rodrigofigueroa1/.nvm/versions/node/v8.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/rodrigofigueroa1/.nvm/versions/node/v8.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

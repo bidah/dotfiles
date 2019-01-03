@@ -580,9 +580,12 @@ let g:ale_fix_on_save = 1
 
 let g:jsx_ext_required = 0
 
-
 " textobj-line
 vmap aL <Plug>(textobj-line-a) 
 vmap iL <Plug>(textobj-line-i)
 
+"Arpeggioimap jk <Esc>
+"Arpeggiocmap jk 
+"Arpeggioimap JK <Esc>
+"Arpeggiocmap JK 
 " el barto was here, there, everywhere

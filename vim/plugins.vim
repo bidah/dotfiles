@@ -78,6 +78,7 @@ Plugin 'tyru/caw.vim' "commments
 Plugin 'cohama/lexima.vim' "auto close parenthesis
 
 Plugin 'sbdchd/neoformat'
+Plugin 'kana/vim-arpeggio'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
